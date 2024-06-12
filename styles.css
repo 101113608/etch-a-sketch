@@ -3,3 +3,9 @@ div > div {
     height: 50px;
     width: 50px;
 }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 850px;
+}

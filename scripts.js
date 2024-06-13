@@ -24,4 +24,15 @@ container.addEventListener('mouseover', (e) => {
 
 gridBtn.addEventListener('click', (e) => {
     let input = +prompt("Enter number of squares per side (maximum 100 per side)");
+
+    if (checkSize(input)) {
+        // Change grid size
+    }
 })
+
+function checkSize(input) {
+    if (typeof input === "number" && input && input > 0 && input < 101)
+        return true
+
+    return false;
+}

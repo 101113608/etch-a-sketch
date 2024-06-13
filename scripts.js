@@ -1,6 +1,7 @@
 const ROW_LENGTH = 16;
 const COLUMN_LENGTH = 16;
 const container = document.querySelector(".container");
+const gridBtn = document.querySelector("#gridBtn");
 
 let grids = [];
 
@@ -19,4 +20,8 @@ container.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains("square")) {
         e.target.style["background-color"] = "lightgrey"
     }
+})
+
+gridBtn.addEventListener('click', (e) => {
+    let input = +prompt("Enter number of squares per side (maximum 100 per side)");
 })

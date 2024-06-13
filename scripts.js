@@ -28,6 +28,7 @@ gridBtn.addEventListener('click', (e) => {
 
     if (checkSize(input)) {
         // Change grid size
+        removeGrid(grids)
     }
 })
 
@@ -36,4 +37,20 @@ function checkSize(input) {
         return true
 
     return false;
+}
+
+function removeGrid(grids) {
+    if (grids === undefined || grids.length === 0)
+        return;
+
+    for (let row = rowLength - 1; row >= 0; row--) {
+        for (let column = columnLength - 1; column >= 0; column--) {
+            container.removeChild(grids[row][column]);
+            grids[row].splice(column, 1);
+        }
+
+        grids.splice(row, 1);
+    }
+    rowLength = 0;
+    columnLength = 0;
 }

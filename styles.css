@@ -1,4 +1,4 @@
-div > div {
+.square {
     border: 1px solid black;
     height: 50px;
     width: 50px;

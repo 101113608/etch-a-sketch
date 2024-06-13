@@ -1,15 +1,16 @@
-const ROW_LENGTH = 16;
-const COLUMN_LENGTH = 16;
 const container = document.querySelector(".container");
 const gridBtn = document.querySelector("#gridBtn");
 
 let grids = [];
+let rowLength = 16;
+let columnLength = 16;
 
-for (let row = 0; row < ROW_LENGTH; row++) {
+for (let row = 0; row < rowLength; row++) {
     // Store a new column array for each row iteration
     grids[row] = new Array()
 
-    for (let column = 0; column < COLUMN_LENGTH; column++) {;
+    for (let column = 0; column < columnLength; column++) {
+        ;
         grids[row][column] = document.createElement("div");
         grids[row][column].setAttribute("class", "square");
         container.appendChild(grids[row][column]);

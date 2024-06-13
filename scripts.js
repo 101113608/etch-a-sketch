@@ -5,16 +5,7 @@ let grids = [];
 let rowLength = 16;
 let columnLength = 16;
 
-for (let row = 0; row < rowLength; row++) {
-    // Store a new column array for each row iteration
-    grids[row] = new Array();
-
-    for (let column = 0; column < columnLength; column++) {
-        grids[row][column] = document.createElement("div");
-        grids[row][column].setAttribute("class", "square");
-        container.appendChild(grids[row][column]);
-    }
-}
+generateGrid(grids, rowLength);
 
 container.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains("square")) {
@@ -26,8 +17,8 @@ gridBtn.addEventListener('click', (e) => {
     let input = +prompt("Enter number of squares per side (maximum 100 per side)");
 
     if (checkSize(input)) {
-        // Change grid size
         removeGrid(grids);
+        generateGrid(grids, input);
     }
 })
 
@@ -36,6 +27,22 @@ function checkSize(input) {
         return true;
 
     return false;
+}
+
+function generateGrid(grids, size) {
+    rowLength = size;
+    columnLength = size;
+
+    for (let row = 0; row < rowLength; row++) {
+        // Store a new column array for each row iteration
+        grids[row] = new Array();
+
+        for (let column = 0; column < columnLength; column++) {
+            grids[row][column] = document.createElement("div");
+            grids[row][column].setAttribute("class", "square");
+            container.appendChild(grids[row][column]);
+        }
+    }
 }
 
 function removeGrid(grids) {

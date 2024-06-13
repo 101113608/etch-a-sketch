@@ -10,6 +10,13 @@ for (let row = 0; row < ROW_LENGTH; row++) {
 
     for (let column = 0; column < COLUMN_LENGTH; column++) {;
         grids[row][column] = document.createElement("div");
+        grids[row][column].setAttribute("class", "square");
         container.appendChild(grids[row][column]);
     }
 }
+
+container.addEventListener('mouseover', (e) => {
+    if (e.target.classList.contains("square")) {
+        e.target.style["background-color"] = "lightgrey"
+    }
+})

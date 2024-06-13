@@ -7,10 +7,9 @@ let columnLength = 16;
 
 for (let row = 0; row < rowLength; row++) {
     // Store a new column array for each row iteration
-    grids[row] = new Array()
+    grids[row] = new Array();
 
     for (let column = 0; column < columnLength; column++) {
-        ;
         grids[row][column] = document.createElement("div");
         grids[row][column].setAttribute("class", "square");
         container.appendChild(grids[row][column]);
@@ -19,7 +18,7 @@ for (let row = 0; row < rowLength; row++) {
 
 container.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains("square")) {
-        e.target.style["background-color"] = "lightgrey"
+        e.target.style["background-color"] = "lightgrey";
     }
 })
 
@@ -28,13 +27,13 @@ gridBtn.addEventListener('click', (e) => {
 
     if (checkSize(input)) {
         // Change grid size
-        removeGrid(grids)
+        removeGrid(grids);
     }
 })
 
 function checkSize(input) {
     if (typeof input === "number" && input && input > 0 && input < 101)
-        return true
+        return true;
 
     return false;
 }

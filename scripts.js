@@ -9,7 +9,7 @@ generateGrid(gridColumn, gridRow, squaresPerSide);
 
 container.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains("row")) {
-        e.target.style["background-color"] = "lightgrey";
+        e.target.style["background-color"] = randomiseColour();
     }
 })
 
@@ -59,4 +59,8 @@ function removeGrid(gridColumn, gridRow) {
         gridColumn.splice(column, 1);
     }
     squaresPerSide = 0;
+}
+
+function randomiseColour() {
+    return `#${Math.floor(Math.random()*16777215).toString(16)}`;
 }
